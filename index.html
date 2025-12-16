@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Instagram Video Download</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            background: #f0f2f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #E1306C;
+        }
+        
+        input {
+            width: 80%;
+            padding: 12px;
+            margin: 20px 0;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        button {
+            background: #E1306C;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        
+        button:hover {
+            background: #C13584;
+        }
+        
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .step {
+            text-align: left;
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📥 Instagram Video Downloader</h1>
+        <p>Paste Instagram video link below:</p>
+        
+        <input type="text" id="url" placeholder="https://www.instagram.com/p/...">
+        <br>
+        <button onclick="downloadVideo()">Download Video</button>
+        
+        <div class="result" id="result">
+            <h3>Video Ready!</h3>
+            <p>Click below to download:</p>
+            <button onclick="startDownload()">⬇️ Download MP4</button>
+        </div>
+        
+        <div class="step">
+            <h3>📝 How to use:</h3>
+            <p>1. Copy Instagram video link</p>
+            <p>2. Paste in the box above</p>
+            <p>3. Click Download button</p>
+        </div>
+        
+        <p style="color: #666; font-size: 14px; margin-top: 30px;">
+            Note: This tool removes watermarks from Instagram videos.
+        </p>
+    </div>
+
+    <script>
+        function downloadVideo() {
+            var url = document.getElementById('url').value;
+            
+            if(!url) {
+                alert("Please paste Instagram URL!");
+                return;
+            }
+            
+            if(!url.includes('instagram.com')) {
+                alert("Please enter a valid Instagram URL!");
+                return;
+            }
+            
+            // Show result section
+            document.getElementById('result').style.display = 'block';
+            
+            // Scroll to result
+            document.getElementById('result').scrollIntoView();
+            
+            // Show success message
+            alert("Video fetched successfully! Click Download MP4 button.");
+        }
+        
+        function startDownload() {
+            alert("In real tool, video would download now.\n\nFor demo: This would download without watermark.");
+        }
+    </script>
+</body>
+</html>
